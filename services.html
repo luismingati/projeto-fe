@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solicita&#231;&#227;o de servi&#231;os de TI | TechNova Solutions</title>
+  <link rel="stylesheet" href="index.css" />
+  <style>
+    .services-wrapper { display: grid; gap: 2rem; }
+    .summary-card { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .summary-card > div { flex: 1 1 220px; background: rgba(15, 108, 255, 0.12); padding: 1.25rem; border-radius: 14px; border: 1px solid rgba(15, 108, 255, 0.2); }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <img src="assets/images/logo.svg" alt="Logotipo TechNova" />
+      <p class="tagline"><strong>Solicita&#231;&#227;o de servi&#231;os de TI</strong></p>
+    </div>
+    <nav>
+      <a href="index.html">In&#237;cio</a>
+      <a href="login.html" data-logout="true">Sair</a>
+    </nav>
+  </header>
+
+  <main class="form-page">
+    <div class="services-wrapper">
+      <section class="section-card">
+        <h2>Dados do cliente</h2>
+        <div class="summary-card">
+          <div>
+            <h3>Identifica&#231;&#227;o</h3>
+            <p><strong>Nome:</strong> <span id="clientName">Patricia Ribeiro</span></p>
+            <p><strong>Login (e-mail):</strong> <span id="clientEmail">patricia.ribeiro@cliente.com</span></p>
+          </div>
+          <div>
+            <h3>Indicadores recentes</h3>
+            <p><strong>Projetos ativos:</strong> <span id="activeProjects">2</span></p>
+            <p><strong>Tickets em andamento:</strong> <span id="openTickets">1</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card">
+        <h2>Hist&#243;rico de solicita&#231;&#245;es</h2>
+        <table class="services-history-table" id="historyTable">
+          <thead>
+            <tr>
+              <th>Data do pedido</th>
+              <th>N&#250;mero</th>
+              <th>Servi&#231;o</th>
+              <th>Status</th>
+              <th>Pre&#231;o</th>
+              <th>Data prevista</th>
+              <th>A&#231;&#227;o</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-id="SRV-1010">
+              <td>2024-01-12</td>
+              <td>SRV-1010</td>
+              <td>Arquitetura Cloud</td>
+              <td>Conclu&#237;do</td>
+              <td>R$ 12.500,00</td>
+              <td>2024-02-02</td>
+              <td><button type="button" class="btn secondary" data-action="remove">Excluir</button></td>
+            </tr>
+            <tr data-id="SRV-1115">
+              <td>2024-03-04</td>
+              <td>SRV-1115</td>
+              <td>DevOps Performance</td>
+              <td>Em execu&#231;&#227;o</td>
+              <td>R$ 8.750,00</td>
+              <td>2024-04-01</td>
+              <td><button type="button" class="btn secondary" data-action="remove">Excluir</button></td>
+            </tr>
+            <tr data-id="SRV-1199">
+              <td>2024-05-18</td>
+              <td>SRV-1199</td>
+              <td>Analytics e AI</td>
+              <td>Planejado</td>
+              <td>R$ 14.900,00</td>
+              <td>2024-06-15</td>
+              <td><button type="button" class="btn secondary" data-action="remove">Excluir</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section-card">
+        <h2>Nova solicita&#231;&#227;o</h2>
+        <form id="serviceForm" class="form-card" style="box-shadow:none;border:none;padding:0;">
+          <label for="serviceType">Servi&#231;o de TI</label>
+          <select id="serviceType" name="serviceType">
+            <option value="cloud">Arquitetura Cloud</option>
+            <option value="devops">DevOps Performance</option>
+            <option value="security">Ciberseguran&#231;a 24/7</option>
+            <option value="analytics">Analytics e AI</option>
+            <option value="support">Suporte Gerenciado</option>
+          </select>
+
+          <label>Pre&#231;o</label>
+          <p id="servicePrice" class="inline-hint">R$ 12.500,00</p>
+
+          <label>Prazo de atendimento</label>
+          <p id="serviceLead" class="inline-hint">15 dias</p>
+
+          <label>Data prevista de atendimento</label>
+          <p id="serviceDate" class="inline-hint">--</p>
+
+          <label>Status</label>
+          <p class="inline-hint">EM ELABORA&#199;&#195;O</p>
+
+          <button type="submit" class="btn primary">Incluir solicita&#231;&#227;o</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h4>Precisa acelerar aprova&#231;&#245;es?</h4>
+        <p>Acione sua consultora dedicada pelo e-mail contas@technova.com.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/common.js" defer></script>
+  <script src="js/services.js" defer></script>
+</body>
+</html>

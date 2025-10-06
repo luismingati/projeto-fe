@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de clientes | TechNova Solutions</title>
+  <link rel="stylesheet" href="index.css" />
+  <style>
+    fieldset { background: rgba(41, 199, 247, 0.08); }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <img src="assets/images/logo.svg" alt="Logotipo TechNova" />
+      <p class="tagline"><strong>Cadastro de clientes</strong></p>
+    </div>
+    <nav>
+      <a href="login.html">Voltar ao login</a>
+      <a href="index.html">In&#237;cio</a>
+    </nav>
+  </header>
+
+  <div class="form-page">
+    <div class="form-card">
+      <form id="registerForm" novalidate>
+        <label for="registerEmail">E-mail (login)</label>
+        <input type="email" id="registerEmail" name="registerEmail" placeholder="cliente@technova.com" autocomplete="email" />
+
+        <label for="registerPassword">Senha</label>
+        <input type="password" id="registerPassword" name="registerPassword" placeholder="Senha segura" autocomplete="new-password" />
+
+        <label for="registerConfirm">Confirma&#231;&#227;o da senha</label>
+        <input type="password" id="registerConfirm" name="registerConfirm" placeholder="Repita a senha" autocomplete="new-password" />
+
+        <p class="inline-hint" id="registerRules">A senha deve possuir ao menos 6 caracteres com uma letra mai&#250;scula, um n&#250;mero e um dos especiais permitidos: @ # $ % &amp; * ! ? / \\ | - _ + . =. Estes n&#227;o s&#227;o aceitos: &#168; { } [ ] &#180; ` ~ ^ : ; &lt; &gt; , &#8220; &#8216;.</p>
+
+        <label for="registerName">Nome completo</label>
+        <input type="text" id="registerName" name="registerName" placeholder="Nome completo" autocomplete="name" />
+
+        <label for="registerCpf">CPF</label>
+        <input type="text" id="registerCpf" name="registerCpf" placeholder="000.000.000-00" maxlength="14" />
+
+        <label for="registerBirth">Data de nascimento</label>
+        <input type="date" id="registerBirth" name="registerBirth" />
+
+        <label for="registerPhone">Telefone / WhatsApp (opcional)</label>
+        <input type="text" id="registerPhone" name="registerPhone" placeholder="(11) 99999-9999" maxlength="15" />
+
+        <fieldset>
+          <legend>Estado civil</legend>
+          <label><input type="radio" name="registerMarital" value="solteiro" checked /> Solteiro(a)</label>
+          <label><input type="radio" name="registerMarital" value="casado" /> Casado(a)</label>
+          <label><input type="radio" name="registerMarital" value="divorciado" /> Divorciado(a)</label>
+          <label><input type="radio" name="registerMarital" value="viuvo" /> Vi&#250;vo(a)</label>
+        </fieldset>
+
+        <label for="registerEducation">Escolaridade</label>
+        <select id="registerEducation" name="registerEducation">
+          <option value="1-incompleto">1o grau incompleto</option>
+          <option value="1-completo">1o grau completo</option>
+          <option value="2-completo" selected>2o grau completo</option>
+          <option value="nivel-superior">N&#237;vel superior</option>
+          <option value="pos">P&#243;s-graduado</option>
+        </select>
+
+        <div class="alert-label error" id="registerMessage" role="alert"></div>
+
+        <div class="login-links">
+          <button type="submit" class="btn primary" id="submitRegister">Incluir</button>
+          <button type="reset" class="btn secondary" id="resetRegister">Limpar</button>
+          <button type="button" class="btn warning" id="backRegister">Voltar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h4>Estamos prontos para ajudar</h4>
+        <p>Entre em contato pelo telefone (11) 3456-7890 para concluir seu cadastro.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/common.js" defer></script>
+  <script src="js/register.js" defer></script>
+</body>
+</html>

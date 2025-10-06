@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login de clientes | TechNova Solutions</title>
+  <link rel="stylesheet" href="index.css" />
+  <style>
+    .form-card { border-top: 4px solid var(--primary); }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <img src="assets/images/logo.svg" alt="Logotipo TechNova" />
+      <p class="tagline"><strong>Login de clientes</strong></p>
+    </div>
+    <nav>
+      <a href="index.html">In&#237;cio</a>
+      <a href="register.html">Cadastre-se</a>
+      <a href="change-password.html">Trocar senha</a>
+    </nav>
+  </header>
+
+  <div class="form-page">
+    <div class="form-card">
+      <form id="loginForm" novalidate>
+        <label for="loginEmail">Login (e-mail)</label>
+        <input type="email" id="loginEmail" name="loginEmail" placeholder="cliente@technova.com" autocomplete="email" />
+
+        <label for="loginPassword">Senha</label>
+        <input type="password" id="loginPassword" name="loginPassword" placeholder="Digite sua senha" autocomplete="current-password" />
+
+        <div class="alert-label error" id="loginMessage" role="alert"></div>
+
+        <div class="login-links">
+          <button type="submit" class="btn primary" id="submitLogin">Realizar Login</button>
+          <button type="reset" class="btn secondary" id="resetLogin">Limpar</button>
+          <a href="change-password.html" class="btn secondary" style="text-decoration:none;line-height:2.3;">Trocar senha</a>
+          <a href="register.html" class="btn secondary" style="text-decoration:none;line-height:2.3;">Cadastrar novo cliente</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h4>Precisa de ajuda?</h4>
+        <p>Fale com nossa central de suporte em suporte@technova.com.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/common.js" defer></script>
+  <script src="js/login.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f6cff" />
+      <stop offset="100%" stop-color="#29c7f7" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="60" rx="12" fill="#0b1f3a" />
+  <path d="M28 45 L12 15 H24 L33 33 L42 15 H54 L38 45 Z" fill="url(#grad)" />
+  <text x="68" y="38" font-family="'Segoe UI', Arial, sans-serif" font-size="26" fill="#e0f4ff">TechNova</text>
+</svg>
