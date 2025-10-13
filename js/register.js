@@ -34,13 +34,13 @@
   }
 
   function isValidEmail(value) {
-    var emailRegex = /^[\w.!#$%&'*+/=?^_`{|}~-]+@[\w-]+(?:\.[\w-]+)+$/;
+    const emailRegex = /^[\w.!#$%&'*+/=?^_`{|}~-]+@[\w-]+(?:\.[\w-]+)+$/;
     return emailRegex.test(String(value || '').trim());
   }
 
   function hasBlockedCharacters(password) {
-    for (var i = 0; i < blockedCharacters.length; i += 1) {
-      if (blockedCharacters[i] && password.indexOf(blockedCharacters[i]) !== -1) {
+    for (const element of blockedCharacters) {
+      if (element && password.indexOf(element) !== -1) {
         return true;
       }
     }
@@ -48,8 +48,8 @@
   }
 
   function hasAllowedSpecial(password) {
-    for (var i = 0; i < allowedSpecial.length; i += 1) {
-      if (password.indexOf(allowedSpecial[i]) !== -1) {
+    for (const element of allowedSpecial) {
+      if (password.indexOf(element) !== -1) {
         return true;
       }
     }
