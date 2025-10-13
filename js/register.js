@@ -1,16 +1,16 @@
 (function () {
-  var form = document.getElementById('registerForm');
-  var emailInput = document.getElementById('registerEmail');
-  var passwordInput = document.getElementById('registerPassword');
-  var confirmInput = document.getElementById('registerConfirm');
-  var nameInput = document.getElementById('registerName');
-  var cpfInput = document.getElementById('registerCpf');
-  var birthInput = document.getElementById('registerBirth');
-  var phoneInput = document.getElementById('registerPhone');
-  var message = document.getElementById('registerMessage');
-  var backButton = document.getElementById('backRegister');
-  var allowedSpecial = "@#$%&*!?/\\|-_+.=";
-  var blockedCharacters = "\u00a8{}[]\u00b4`~^:;<>,'\\"\u201c\u201d\u2018\u2019";
+  const form = document.getElementById('registerForm');
+  const emailInput = document.getElementById('registerEmail');
+  const passwordInput = document.getElementById('registerPassword');
+  const confirmInput = document.getElementById('registerConfirm');
+  const nameInput = document.getElementById('registerName');
+  const cpfInput = document.getElementById('registerCpf');
+  const birthInput = document.getElementById('registerBirth');
+  const phoneInput = document.getElementById('registerPhone');
+  const message = document.getElementById('registerMessage');
+  const backButton = document.getElementById('backRegister');
+  const allowedSpecial = "@#$%&*!?/\\|-_+.=";
+  const blockedCharacters = "\"{}[] ́`~^:;<>,'“‘";
 
   function showMessage(text, isError) {
     if (!message) {
