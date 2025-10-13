@@ -1,15 +1,21 @@
 (function () {
-  var form = document.getElementById('passwordForm');
-  var emailInput = document.getElementById('passwordEmail');
-  var passwordInput = document.getElementById('passwordNew');
-  var confirmInput = document.getElementById('passwordConfirm');
-  var message = document.getElementById('passwordMessage');
+  const form = document.getElementById('passwordForm');
+  const emailInput = document.getElementById('passwordEmail');
+  const passwordInput = document.getElementById('passwordNew');
+  const confirmInput = document.getElementById('passwordConfirm');
+  const message = document.getElementById('passwordMessage');
 
-  var allowedSpecial = "@#$%&*!?/\\|-_+.=";
-  var blockedCharacters = "\u00a8{}[]\u00b4`~^:;<>,'\\"\u201c\u201d\u2018\u2019";
+  console.log('Password.js carregado');
+  console.log('Form encontrado:', !!form);
+  console.log('Message element encontrado:', !!message);
+
+  const allowedSpecial = "@#$%&*!?/\\|-_+.=";
+  const blockedCharacters = "\"{}[] ́`~^:;<>,'“‘";
 
   function showMessage(text, isError) {
+    console.log('showMessage chamada:', text, 'isError:', isError);
     if (!message) {
+      console.log('Elemento message n\u00e3o encontrado, usando alert');
       if (isError) {
         window.alert(text);
       }
@@ -19,6 +25,7 @@
     message.classList.remove('success', 'error');
     message.classList.add(isError ? 'error' : 'success');
     message.style.display = 'block';
+    console.log('Mensagem exibida, display:', message.style.display, 'classes:', message.className);
   }
 
   function hideMessage() {
@@ -35,8 +42,8 @@
   }
 
   function hasBlockedCharacters(password) {
-    for (var i = 0; i < blockedCharacters.length; i += 1) {
-      if (blockedCharacters[i] && password.indexOf(blockedCharacters[i]) !== -1) {
+    for (const element of blockedCharacters) {
+      if (element && password.indexOf(element) !== -1) {
         return true;
       }
     }
@@ -44,8 +51,8 @@
   }
 
   function hasAllowedSpecial(password) {
-    for (var i = 0; i < allowedSpecial.length; i += 1) {
-      if (password.indexOf(allowedSpecial[i]) !== -1) {
+    for (const element of allowedSpecial) {
+      if (password.indexOf(element) !== -1) {
         return true;
       }
     }
@@ -72,13 +79,15 @@
   }
 
   if (form) {
+    console.log('Adicionando event listener ao form');
     form.addEventListener('submit', function (event) {
+      console.log('Submit event triggered');
       event.preventDefault();
       hideMessage();
 
-      var emailValue = emailInput ? emailInput.value.trim() : '';
-      var passwordValue = passwordInput ? passwordInput.value : '';
-      var confirmValue = confirmInput ? confirmInput.value : '';
+      const emailValue = emailInput ? emailInput.value.trim() : '';
+      const passwordValue = passwordInput ? passwordInput.value : '';
+      const confirmValue = confirmInput ? confirmInput.value : '';
 
       if (!emailValue) {
         showMessage('Informe o login (formato e-mail).', true);
@@ -112,7 +121,7 @@
         return;
       }
 
-      var passwordError = validatePassword(passwordValue);
+      const passwordError = validatePassword(passwordValue);
       if (passwordError) {
         showMessage(passwordError, true);
         if (passwordInput) {
